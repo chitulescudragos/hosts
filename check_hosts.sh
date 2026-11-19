@@ -1,6 +1,11 @@
 #!/bin/bash
 
-HOSTS_FILE="$HOME/etc/hosts"
+if [ $# -eq 0 ] || [ ! -f "$1" ]; then
+    echo "Error: File does not exist or no argument provided."
+    exit 1
+fi
+
+HOSTS_FILE="$1"
 
 while read -r ip host _; do
     [[ -z "$ip" || "$ip" =~ ^# ]] && continue
