@@ -28,3 +28,4 @@ while read -r ip host _; do
         echo "Invalid IP format: $ip ($host)"
     fi
 done < "$HOSTS_FILE"
+echo "Modificat de: Student A"
